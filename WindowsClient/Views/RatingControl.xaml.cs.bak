@@ -1,0 +1,249 @@
+﻿using IBrewery.Client.Models;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
+
+namespace IBrewery.Client.Views
+{
+    /// <summary>
+    /// Interaktionslogik für RatingControl.xaml
+    /// </summary>
+    public partial class RatingControl : UserControl
+    {
+        private readonly SolidColorBrush orange = new SolidColorBrush(Color.FromRgb(255, 102, 0));
+        private readonly SolidColorBrush clear = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                     
+        public int StarCount
+        {
+            get
+            {
+                return (int)GetValue(StarCountProperty);
+            }
+            set
+            {
+                SetValue(StarCountProperty, value);               
+
+                if (this.DataContext is Criteria criteria)
+                {
+                    if(criteria.Ranking != value)
+                    {
+                        criteria.Ranking = value;
+                    }                   
+                }
+            }
+        }
+
+        // Using a DependencyProperty as the backing store for StarCount.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty StarCountProperty =
+            DependencyProperty.Register("StarCount", typeof(int), typeof(RatingControl), new FrameworkPropertyMetadata(new PropertyChangedCallback(OnValueChanged)));
+
+ 
+        private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is RatingControl ratingControl)
+            {
+                if (ratingControl.DataContext is  IRankingModel ranking)
+                {
+                    if(ratingControl.StarCount != ranking.Ranking)
+                    {
+                        ranking.Ranking = ratingControl.StarCount;                        
+                    }
+
+                    ratingControl.UserControl_MouseLeave(null, null);
+                }               
+            }
+        }
+
+        public RatingControl()
+        {
+            InitializeComponent();
+        }
+
+        public RatingControl(int selected)
+        {
+            InitializeComponent();
+            StarCount = selected;
+            UserControl_MouseLeave(null, null);
+        }
+
+        private void S1_MouseEnter(object sender, MouseEventArgs e)
+        {
+            s1.Fill = orange;
+            s2.Fill = clear;
+            s3.Fill = clear;
+            s4.Fill = clear;
+            s5.Fill = clear;
+        }
+
+        private void S2_MouseEnter(object sender, MouseEventArgs e)
+        {
+            s1.Fill = orange;
+            s2.Fill = orange;
+            s3.Fill = clear;
+            s4.Fill = clear;
+            s5.Fill = clear;
+        }
+
+        private void S3_MouseEnter(object sender, MouseEventArgs e)
+        {
+            s1.Fill = orange;
+            s2.Fill = orange;
+            s3.Fill = orange;
+            s4.Fill = clear;
+            s5.Fill = clear;
+        }
+
+        private void S4_MouseEnter(object sender, MouseEventArgs e)
+        {
+            s1.Fill = orange;
+            s2.Fill = orange;
+            s3.Fill = orange;
+            s4.Fill = orange;
+            s5.Fill = clear;
+        }
+
+        private void S5_MouseEnter(object sender, MouseEventArgs e)
+        {
+            s1.Fill = orange;
+            s2.Fill = orange;
+            s3.Fill = orange;
+            s4.Fill = orange;
+            s5.Fill = orange;
+        }
+
+        private void S1_MouseLeave(object sender, MouseEventArgs e)
+        {
+            s1.Fill = clear;
+        }
+
+        private void S2_MouseLeave(object sender, MouseEventArgs e)
+        {
+            s1.Fill = clear;
+            s2.Fill = clear;
+        }
+
+        private void S3_MouseLeave(object sender, MouseEventArgs e)
+        {
+            s1.Fill = clear;
+            s2.Fill = clear;
+            s3.Fill = clear;
+        }
+
+        private void S4_MouseLeave(object sender, MouseEventArgs e)
+        {
+            s1.Fill = clear;
+            s2.Fill = clear;
+            s3.Fill = clear;
+            s4.Fill = clear;
+        }
+
+        private void S5_MouseLeave(object sender, MouseEventArgs e)
+        {
+            s1.Fill = clear;
+            s2.Fill = clear;
+            s3.Fill = clear;
+            s4.Fill = clear;
+            s5.Fill = clear;
+        }
+
+        private void S1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            StarCount = 1;
+            s1.Fill = orange;
+            s2.Fill = clear;
+            s3.Fill = clear;
+            s4.Fill = clear;
+            s5.Fill = clear;
+        }
+
+        private void S2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            StarCount = 2;
+            s1.Fill = orange;
+            s2.Fill = orange;
+            s3.Fill = clear;
+            s4.Fill = clear;
+            s5.Fill = clear;
+        }
+
+        private void S3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            StarCount = 3;
+            s1.Fill = orange;
+            s2.Fill = orange;
+            s3.Fill = orange;
+            s4.Fill = clear;
+            s5.Fill = clear;
+        }
+
+        private void S4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            StarCount = 4;
+            s1.Fill = orange;
+            s2.Fill = orange;
+            s3.Fill = orange;
+            s4.Fill = orange;
+            s5.Fill = clear;
+        }
+
+        private void S5_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            StarCount = 5;
+            s1.Fill = orange;
+            s2.Fill = orange;
+            s3.Fill = orange;
+            s4.Fill = orange;
+            s5.Fill = orange;
+        }
+
+        public void UserControl_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+            if (StarCount == 1)
+            {
+                s1.Fill = orange;
+                s2.Fill = clear;
+                s3.Fill = clear;
+                s4.Fill = clear;
+                s5.Fill = clear;
+            }
+
+            if (StarCount == 2)
+            {
+                s1.Fill = orange;
+                s2.Fill = orange;
+                s3.Fill = clear;
+                s4.Fill = clear;
+                s5.Fill = clear;
+            }
+
+            if (StarCount == 3)
+            {
+                s1.Fill = orange;
+                s2.Fill = orange;
+                s3.Fill = orange;
+                s4.Fill = clear;
+                s5.Fill = clear;
+            }
+
+            if (StarCount == 4)
+            {
+                s1.Fill = orange;
+                s2.Fill = orange;
+                s3.Fill = orange;
+                s4.Fill = orange;
+                s5.Fill = clear;
+            }
+
+            if (StarCount == 5)
+            {
+                s1.Fill = orange;
+                s2.Fill = orange;
+                s3.Fill = orange;
+                s4.Fill = orange;
+                s5.Fill = orange;
+            }
+        }
+    }
+}

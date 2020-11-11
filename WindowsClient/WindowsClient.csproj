@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>IBrewery.Client</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\Add-Icon.png" />
+    <None Remove="Icons\App-Icon.ico" />
+    <None Remove="Icons\App1.ico" />
+    <None Remove="Icons\AppIcon.jpg" />
+    <None Remove="Icons\Arduino-Icon2.jpg" />
+    <None Remove="Icons\BlackWhiteBeer-Icon.png" />
+    <None Remove="Icons\Brewing-Icon-512-2.png" />
+    <None Remove="Icons\CollorBear-Icon.ico" />
+    <None Remove="Icons\Dashboard-Icon-512.png" />
+    <None Remove="Icons\Delete-Icon.png" />
+    <None Remove="Icons\Double-Icon.ico" />
+    <None Remove="Icons\Down-Icon.ico" />
+    <None Remove="Icons\Exit-Icon.png" />
+    <None Remove="Icons\hops-512 - Kopie %282%29.png" />
+    <None Remove="Icons\hops-512 - Kopie.png" />
+    <None Remove="Icons\hops-512.png" />
+    <None Remove="Icons\icon-image.jpg" />
+    <None Remove="Icons\Info-Icon.ico" />
+    <None Remove="Icons\Load-Icon.ico" />
+    <None Remove="Icons\New-Icon.ico" />
+    <None Remove="Icons\New.png" />
+    <None Remove="Icons\Save-Icon.ico" />
+    <None Remove="Icons\Settings-Icon.png" />
+    <None Remove="Icons\star_yellow.png" />
+    <None Remove="Icons\Untitled - 2.ico" />
+    <None Remove="Icons\Up-Icon.ico" />
+    <None Remove="Icons\vis.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\Add-Icon.png" />
+    <Resource Include="Icons\App-Icon.ico" />
+    <Resource Include="Icons\App1.ico" />
+    <Resource Include="Icons\AppIcon.jpg" />
+    <Resource Include="Icons\Arduino-Icon2.jpg" />
+    <Resource Include="Icons\BlackWhiteBeer-Icon.png" />
+    <Resource Include="Icons\Brewing-Icon-512-2.png" />
+    <Resource Include="Icons\CollorBear-Icon.ico" />
+    <Resource Include="Icons\Dashboard-Icon-512.png" />
+    <Resource Include="Icons\Delete-Icon.png" />
+    <Resource Include="Icons\Double-Icon.ico" />
+    <Resource Include="Icons\Down-Icon.ico" />
+    <Resource Include="Icons\Exit-Icon.png" />
+    <Resource Include="Icons\hops-512 - Kopie (2).png" />
+    <Resource Include="Icons\hops-512 - Kopie.png" />
+    <Resource Include="Icons\hops-512.png" />
+    <Resource Include="Icons\icon-image.jpg" />
+    <Resource Include="Icons\Info-Icon.ico" />
+    <Resource Include="Icons\Load-Icon.ico" />
+    <Resource Include="Icons\New-Icon.ico" />
+    <Resource Include="Icons\New.png" />
+    <Resource Include="Icons\Save-Icon.ico" />
+    <Resource Include="Icons\Settings-Icon.png" />
+    <Resource Include="Icons\star_yellow.png" />
+    <Resource Include="Icons\Untitled - 2.ico" />
+    <Resource Include="Icons\Up-Icon.ico" />
+    <Resource Include="Icons\vis.bmp" />
+  </ItemGroup>
+
+</Project>
